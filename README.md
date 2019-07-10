@@ -1,3 +1,5 @@
+![](.github/seg-fault.gif)
+
 # Segmentation fault proof of concept
 
 This codebase demonstrates a segmentation fault caused by _something_ related to the interaction of `sharp`, `ghostscript4js` and possibly Node Streams.
