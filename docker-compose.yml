@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  app:
+    build: .
+    privileged: true
+    volumes:
+      - ./src:/var/app/src
+      - ./package.json:/var/app/package.json
+      - /tmp:/tmp
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    command: ["npm", "start"]

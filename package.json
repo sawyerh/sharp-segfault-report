@@ -1,0 +1,26 @@
+{
+  "name": "sawyerh-sharp-report",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "bootstrap-tmp": "mkdir -p /tmp/sharp-pdf-ghostscript",
+    "docker:build": "docker-compose build",
+    "predocker:build": "npm run bootstrap-tmp",
+    "docker:start": "docker-compose up app",
+    "docker:gdb": "docker-compose run --rm --service-ports --entrypoint 'npm run start:gdb' app",
+    "start": "node --inspect=0.0.0.0:9229 src",
+    "prestart": "npm run bootstrap-tmp",
+    "start:gdb": "gdb --args node src"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ghostscript4js": "^3.1.0",
+    "pdfkit": "^0.10.0",
+    "sharp": "^0.22.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
